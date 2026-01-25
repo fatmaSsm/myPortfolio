@@ -1,0 +1,494 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatma Susam || Portfolio</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header class="nav" id="siteNav">
+    <a class="logo" href="#home" aria-label="Go to Home">
+      <svg class="nav-name" viewBox="0 0 360 60" role="img" aria-label="Fatma Susam">
+        <defs>
+          <linearGradient id="navLight" gradientUnits="userSpaceOnUse" x1="-160" y1="0" x2="0" y2="0">
+            <stop offset="0%" stop-color="rgba(186,104,255,0)" />
+            <stop offset="45%" stop-color="rgba(186,104,255,0.25)" />
+            <stop offset="50%" stop-color="#ffffff" />
+            <stop offset="55%" stop-color="rgba(186,104,255,0.25)" />
+            <stop offset="100%" stop-color="rgba(186,104,255,0)" />
+          </linearGradient>
+        </defs>
+
+        <text x="0" y="44" class="nav-text base">Fatma Susam</text>
+        <text x="0" y="44" class="nav-text glow">Fatma Susam</text>
+      </svg>
+    </a>
+
+    <!-- Mobile toggle -->
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="primaryNav"
+      aria-expanded="false">
+      <span class="nav-toggle-lines" aria-hidden="true"></span>
+    </button>
+
+    <!-- Nav links -->
+    <nav id="primaryNav" class="nav-links" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Mobile scrim -->
+  <div class="nav-scrim" id="navScrim" aria-hidden="true"></div>
+
+  <!-- HERO -->
+  <section id="home" class="hero hero-split">
+    <div class="hero-visual">
+
+      <!-- Fallback image (always available) -->
+      <img src="img/hero.png" alt="Fatma Susam portrait" class="hero-img" loading="eager" decoding="async">
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+    </div>
+
+    <div class="hero-text">
+      <h1>
+        Hi, I’m
+        <svg class="nav-name sketch fatma-logo-hero" viewBox="0 0 360 120">
+          <g fill="none" stroke="currentColor" stroke-width="11" stroke-linecap="round" stroke-linejoin="round">
+            <path class="line-hero" d="M18 18v84M18 18h44M18 60h32" />
+            <path class="line-hero" d="M88 102L112 18l22 84M96 72h34" />
+            <path class="line-hero" d="M158 18h54M184 18v84" />
+            <path class="line-hero" d="M238 102V18l22 46l22-46v84" />
+            <path class="line-hero" d="M308 102L332 18l22 84M316 72h34" />
+          </g>
+        </svg>
+        <br>
+        I design & build interactive<br>
+        digital experiences.
+      </h1>
+
+      <p class="subtitle">
+        Software Development || Creative Coding || Systems & Security
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section about-grid">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Hey, I’m Fatma! I’m 19 and currently studying Information Systems Engineering
+        at Muğla Sıtkı Koçman University.
+      </p>
+      <p>
+        I mostly work on websites, but I’m also exploring game development, mobile
+        apps, data, and backend development.
+      </p>
+      <p>
+        I care about clean, readable code, strong visuals, and meaningful
+        interactions.
+      </p>
+    </div>
+
+    <div class="night-card" id="nbCard" tabindex="0" aria-label="Night garden card. Scroll to grow tulips.">
+      <canvas id="nbCanvas"></canvas>
+
+      <div class="nb-ui">
+        <span class="nb-pill">Night Bloom</span>
+        <span class="nb-hint">Scroll to grow</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section reveal">
+    <canvas id="skillsFx" aria-hidden="true"></canvas>
+
+    <div class="skills-wrap">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-toolbar">
+        <div class="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18zm11 3-6-6" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          <input id="skillSearch" type="text" placeholder=" Search skills… (e.g. docker, react, linux)"
+            autocomplete="off" />
+          <button id="clearSearch" class="ghost" type="button" title="Clear">×</button>
+        </div>
+
+        <div class="chips" role="tablist" aria-label="Skills filters">
+          <button class="chip is-active" data-filter="all" type="button">All</button>
+          <button class="chip" data-filter="lang" type="button">Languages</button>
+          <button class="chip" data-filter="fw" type="button">Frameworks</button>
+          <button class="chip" data-filter="tool" type="button">Tools</button>
+        </div>
+      </div>
+
+      <div id="skillsGrid" class="skills-grid">
+        <!-- LANGUAGES -->
+        <div class="skill-card" data-skill="csharp" data-group="lang" data-level="80">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" />
+            <span>C#</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="c" data-group="lang" data-level="80">
+          <div class="skill-inner">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" alt="C" />
+            <span>C</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="cplusplus" data-group="lang" data-level="70">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" />
+            <span>C++</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="java" data-group="lang" data-level="70">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+            <span>Java</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="python" data-group="lang" data-level="70">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" />
+            <span>Python</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="sql" data-group="lang" data-level="86">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" />
+            <span>SQL</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="html" data-group="lang" data-level="90">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" />
+            <span>HTML5</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="css" data-group="lang" data-level="86">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" />
+            <span>CSS3</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="js" data-group="lang" data-level="84">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript" />
+            <span>JavaScript</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <!-- FRAMEWORKS -->
+        <div class="skill-card" data-skill="node" data-group="fw" data-level="37">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" />
+            <span>Node.js</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="react" data-group="fw" data-level="40">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" />
+            <span>React</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <!-- TOOLS -->
+        <div class="skill-card" data-skill="figma" data-group="tool" data-level="62">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma" />
+            <span>Figma</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="photoshop" data-group="tool" data-level="90">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-plain.svg"
+              alt="Photoshop" />
+            <span>Photoshop</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="blender" data-group="tool" data-level="60">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg" alt="Blender" />
+            <span>Blender</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="unity" data-group="tool" data-level="60">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" />
+            <span>Unity</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="docker" data-group="tool" data-level="53">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+            <span>Docker</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="androidstudio" data-group="tool" data-level="72">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg"
+              alt="Android Studio" />
+            <span>Android Studio</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="virtualbox" data-group="tool" data-level="65">
+          <div class="skill-inner">
+            <img src="https://cdn.simpleicons.org/virtualbox/7B42BC" alt="Oracle VirtualBox" />
+            <span>VirtualBox</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="arduino" data-group="tool" data-level="84">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" />
+            <span>Arduino</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="linux" data-group="tool" data-level="45">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" />
+            <span>Linux</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="git" data-group="tool" data-level="67">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+            <span>Git</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="github" data-group="tool" data-level="82">
+          <div class="skill-inner">
+            <img src="https://logo.svgcdn.com/simple-icons/github-dark.svg" alt="GitHub" />
+            <span>GitHub</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="vscode" data-group="tool" data-level="90">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" />
+            <span>VS Code</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+
+        <div class="skill-card" data-skill="visualstudio" data-group="tool" data-level="90">
+          <div class="skill-inner">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-original.svg"
+              alt="Visual Studio" />
+            <span>Visual Studio</span>
+            <div class="meter" aria-hidden="true"><i></i></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="skillsEmpty" class="skills-empty" hidden>
+        No matches found. Try a different keyword👾
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section reveal">
+    <h2>Projects</h2>
+
+    <div class="projects-grid">
+      <div class="project-card">
+        <h3>Personal Wallet Manager</h3>
+        <p>
+          A personal wallet application developed in both C and C#.
+          The C version focuses on low-level file handling and data persistence,
+          while the C# version provides a more structured architecture with
+          improved user interaction and data management.
+        </p>
+        <span class="project-tag">Software Development</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Shoot the UFOs</h3>
+        <p>
+          An arcade-style shooter game developed with Pygame.
+          Features real-time collision detection, scoring system,
+          and sound effects.
+        </p>
+        <span class="project-tag">Game Development</span>
+      </div>
+
+      <div class="project-card">
+        <h3>E-Commerce Website</h3>
+        <p>
+          A full-stack e-commerce platform with user authentication,
+          shopping cart, and order tracking.
+        </p>
+        <span class="project-tag">Web Development</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Game Prototypes with Unity</h3>
+        <p>
+          Prototype-level games developed with Unity,
+          experimenting with game mechanics, player movement,
+          basic physics, and interactive environments.
+        </p>
+        <span class="project-tag">Game Development</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Android Utility Applications</h3>
+        <p>
+          Small-scale Android applications developed using Android Studio,
+          focusing on UI responsiveness, basic data handling, and user-friendly layouts.
+          Includes practical tools and learning-focused prototypes.
+        </p>
+        <span class="project-tag">Mobile Development</span>
+      </div>
+
+      <div class="project-card">
+        <h3>Interactive Canvas Experiments</h3>
+        <p>
+          A set of creative coding experiments built with HTML5 Canvas and JavaScript.
+          Focused on smooth animations, glow effects, micro-interactions, and
+          scroll-based visual feedback.
+        </p>
+        <span class="project-tag">Creative Coding</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h2 class="footer-title">Contact</h2>
+          <p class="footer-desc">
+            Interested in my work or want to collaborate?
+            You can find me on GitHub or connect with me on LinkedIn.
+          </p>
+
+          <div class="footer-actions">
+            <a class="footer-btn" href="https://github.com/fatmaSsm" target="_blank" rel="noopener noreferrer">
+              <span class="dot"></span> GitHub
+            </a>
+            <a class="footer-btn ghost" href="https://www.linkedin.com/in/fatma-susam/" target="_blank"
+              rel="noopener noreferrer">
+              <span class="dot"></span> LinkedIn
+            </a>
+            <a class="footer-btn" href="mailto:fatmasusam6060@gmail.com?subject=Hello%20Fatma" aria-label="Send email">
+              <span class="dot"></span> Email
+            </a>
+            <button class="footer-btn ghost copy-btn" type="button" data-copy="fatmasusam6060@gmail.com"
+              aria-label="Copy email">
+              <span class="dot"></span> Copy Email
+            </button>
+          </div>
+          <span class="copy-toast" id="copyToast">Copied!</span>
+        </div>
+
+        <div class="footer-card">
+          <div class="footer-card-glow"></div>
+          <div class="footer-card-inner">
+            <h3>Let’s build something calm & sharp.</h3>
+            <p>Open to internships, freelance, and collaborations.</p>
+
+            <div class="footer-mini">
+              <span class="mini-pill">Software Development</span>
+              <span class="mini-pill">Web + UI</span>
+              <span class="mini-pill">REST & Data</span>
+              <span class="mini-pill">Always Learning</span>
+              <span class="mini-pill">Interactive Systems</span>
+              <span class="mini-pill">Creative Coding</span>
+              <span class="mini-pill">Security Basics</span>
+              <span class="mini-pill">Performance</span>
+              <span class="mini-pill">Accessibility</span>
+              <span class="mini-pill">Creative</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Fatma</span>
+        <span class="muted">Made with caffeine and questionable sleep</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button class="to-top" id="toTop" aria-label="Back to top" type="button">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8L6.4 13.4 5 12l7-7z"></path>
+    </svg>
+  </button>
+
+  <!-- INTERACTIVE CURSOR CANVAS -->
+  <canvas id="neon-trail"></canvas>
+
+  <!-- Anime.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
